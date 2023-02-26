@@ -1,0 +1,28 @@
+.movie__card {
+    background-color:transparent;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+    min-width: 250px;
+    height: 425px;
+    margin-top: 50px;
+
+    &__img {
+        border: 1px solid black;
+        border-radius: 10px 10px;
+        box-shadow: 5px 5px 5px rgb(43, 42, 42);
+        height: 375px;
+        width: 95%;
+    }
+
+    &__text {
+        font-size: 13px;
+        text-align: center;
+        white-space: nowrap;
+        margin-top: 5px;
+        color: rgb(255, 255, 0);
+        font-weight: bold;
+    }
+}

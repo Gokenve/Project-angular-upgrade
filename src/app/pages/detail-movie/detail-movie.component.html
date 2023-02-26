@@ -1,0 +1,58 @@
+<section class="detail__movie">
+    <article 
+    class="detail-movie__container"
+    *ngIf="movie; else movieNotFound">
+        <div class="detail-movie__img-container">
+            <img class="detail-movie__img" [src]="movie.picture" [alt]="movie.title">
+        </div>
+        <div class="detail-movie__text-container">
+            <div class="detail__movie__text-detail">
+                <h2 class="detail__movie__text">
+                    {{ movie.title }}
+                </h2>
+            </div>
+            <div class="detail__movie__text-detail">
+                <p>Año : </p>
+                <h5>
+                    {{ movie.year }}
+                </h5>
+            </div>                
+            <div class="detail__movie__text-detail">
+                <p>Género : </p>
+                <h5 *ngFor="let genre of movie.genre">
+                    {{ genre }}
+                </h5>
+            </div>    
+            <div class="detail__movie__text-detail">
+                <p>Dirección : </p>
+                <h3 class="detail__movie__text">
+                    {{ movie.director }}
+                </h3>
+            </div>
+            <div class="detail__movie__text-detail">
+                 <p>Reparto : </p>
+                <h3 *ngFor="let cast of movie.cast">
+                    {{ cast }}
+                </h3>
+            </div>
+            <div class="detail__movie__text-detail__data">
+                <p>Ficha técnica</p>
+                <p>Producción : </p>
+                <h4 *ngFor="let producer of movie.data_sheet.producers">
+                    {{ producer }}
+                </h4>
+                <p>Guion : </p>
+                <h4 *ngFor="let script of movie.data_sheet.script">
+                    {{ script }}
+                </h4>
+                <p>Duración : </p>
+                <h5>
+                    {{ movie.data_sheet.duration }}
+                </h5>
+            </div>   
+        </div>
+    </article>
+</section>
+<ng-template #movieNotFound>
+    <p style="color: azure;">No existe una película con ese id</p>
+</ng-template>

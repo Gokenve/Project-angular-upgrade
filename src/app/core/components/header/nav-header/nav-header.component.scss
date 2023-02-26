@@ -1,0 +1,21 @@
+.header__container {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+}
+
+.ul__nav {
+    display: flex;
+}
+
+.nav__header {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-evenly
+}
+.list__nav {
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+}

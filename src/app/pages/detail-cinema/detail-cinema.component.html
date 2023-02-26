@@ -1,0 +1,52 @@
+<section class="detail__cinema">
+    <article 
+    class="detail__cinema__container"
+    *ngIf="cinema; else cinemaNotFound">
+        <div class="detail__cinema__text-container">
+            <h2 class="detail__cinema__text">
+                {{ cinema.name }}
+            </h2>
+            <p>Localidad : </p>
+            <h4 class="detail__cinema__text">
+                {{ cinema.location }}
+            </h4>
+            <p>Página web : </p>
+            <h4 class="detail__cinema__text">
+                <a style="color: white" href="/">
+                    {{ cinema.website }}
+                </a>
+            </h4>
+            <p>Contacto :</p>
+            <div 
+            class="detail__cinema__contact"
+            *ngIf="cinema.contact">
+                
+                <h5 class="detail__cinema__text">
+                    Email : {{ cinema.contact.email }}
+                </h5>
+                <h5 class="detail__cinema__text">
+                    Dirección : {{ cinema.contact.address }}
+                </h5>
+                <h5 class="detail__cinema__text">
+                    Teléfono : {{ cinema.contact.phone }}
+                </h5>
+            </div>
+        </div>
+            <p>Películas</p>
+            <div class="detail__cinema__movies-container">
+                <div 
+                class="detail__cinema_movie-container"
+                *ngFor="let movie of cinema.movies">
+                    <img
+                    class="detail__cinema__movie" 
+                    [src]="movie.picture" 
+                    [alt]="movie.title">
+                    <h2>{{ movie.title }}</h2>
+                </div>
+            </div>
+        
+    </article>
+</section>
+<ng-template #cinemaNotFound>
+    <p style="color: azure;">No existe un cine con ese id</p>
+</ng-template>

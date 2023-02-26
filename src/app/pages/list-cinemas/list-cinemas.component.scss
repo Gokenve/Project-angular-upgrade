@@ -1,0 +1,19 @@
+.listCinemas {
+    display: flexbox;
+
+    justify-content:center;
+
+    &__container {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content:center;
+        gap: 65px;
+    }
+
+    &__cinema {
+        display: flex;
+        width: 260px;
+        height: 400px;
+    }
+}

@@ -1,0 +1,10 @@
+<section class="listCinemas">
+    <app-filter [actualSection]="actualSection"></app-filter>
+    <article class="listCinemas__container">
+        <app-cinema 
+        class="listCinemas__cinema"
+        *ngFor="let cinema of cinemas"
+        [cinema]="cinema"
+    ></app-cinema>
+    </article>
+</section>

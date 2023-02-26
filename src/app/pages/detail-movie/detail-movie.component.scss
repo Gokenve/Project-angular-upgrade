@@ -1,0 +1,50 @@
+.detail-movie {
+    //display: flex;
+    //align-items: center;
+    //height: 100%;
+    //width: 95%;
+    //height: 450px;
+    //color: whitesmoke;
+    &__container {
+        padding: 25px;
+        display: inline-flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 30px;
+        width: 1000px;
+        height: 100%;
+    }
+
+    &__img-container {
+        width: 350px;
+    }
+
+    &__img {
+        width: 290px;
+        height: 490px;
+        border: 1px solid black;
+        border-radius: 20px;
+        box-shadow: 5px 5px 5px rgb(43, 42, 42);
+    }
+
+    &__text-container {
+        flex-direction: column;
+        flex-wrap: wrap;
+        width: 600px;
+        height: 550px;
+        background-image: url('../../../assets/images/fondo\ detalle\ peliculas.png');
+        background-position:bottom;
+        background-size: cover;
+        align-items: flex-start;
+        align-content: space-around;
+        display: flex;
+        justify-content:flex-end;
+        border-radius: 20px;
+        color: rgb(255, 255, 0);
+        text-shadow: 2px 2px 2px 1px rgb(0, 0, 0);
+    }
+
+    &__text-detail__data {
+    }
+}

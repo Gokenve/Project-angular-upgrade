@@ -1,0 +1,15 @@
+.button {
+    cursor: pointer;
+    height: 20px;
+    margin: 20px;
+    background-color: blanchedalmond;
+    box-shadow: 1px 1px rgb(43, 42, 42);
+    border-radius: 10px;
+
+    &:hover {
+        opacity: 0.7;
+    }
+    &:active {
+        background-color: rgb(240, 171, 69);
+    }
+}

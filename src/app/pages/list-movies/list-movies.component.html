@@ -1,0 +1,11 @@
+<section class="listMovies">
+    <app-filter [actualSection]="actualSection"></app-filter>
+    <article class="listMovies__container">
+        <app-movie 
+        class="listMovies__movie"
+        *ngFor="let movie of movies"
+        [movie]="movie"
+    ></app-movie>
+    </article>    
+</section>
+

@@ -1,0 +1,18 @@
+.listMovies {
+    display: flexbox;
+    justify-content: center;
+    
+    &__container {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content:center;
+        gap: 65px;
+    }
+
+    &__movie {
+        display: flex;
+        width: 260px;
+        height: 450px;
+    }
+}

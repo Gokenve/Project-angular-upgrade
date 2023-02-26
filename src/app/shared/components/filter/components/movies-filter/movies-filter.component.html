@@ -1,0 +1,36 @@
+<article class="filter">
+    <div class="filter__container__select">
+        <label for="selectFilter">Filtrar por</label>
+        <select 
+        class="filter__select" 
+        name="selectFilter" 
+        [(ngModel)]="selectFilter">
+            <option>Título</option>
+            <option>Género</option>
+            <option>Dirección</option>
+            <option>Reparto</option>
+        </select>
+    </div>
+    <div class="filter__container__select"
+    *ngIf="selectFilter === 'Género'">
+        <label for="selectGenre"></label>
+        <select 
+        class="filter__select__genre" 
+        name="selectGenre" 
+        >
+            <option *ngFor="let movieGenre of moviesGenres">
+                {{ movieGenre }}
+            </option>
+        </select>
+    </div>
+    <div class="filter__container__input" *ngIf="selectFilter != 'Género'">
+        <label for="filter"></label>
+        <input
+        class="filter__input" 
+        type="text"
+        name="filter"
+        [placeholder]="selectFilter"
+        [(ngModel)]="inputValue"
+        />
+    </div>
+</article>

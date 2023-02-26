@@ -1,0 +1,13 @@
+<article>
+  <div *ngIf="movie" class="movie__card" (click)="navigateToDetail()">
+    <img
+      class="movie__card__img"
+      [src]="movie.picture"
+      alt="{{ movie.title }}"
+    />
+    <div class="movie__card__text">
+      <h3 class="movie__card__title">{{ movie.title }}</h3>
+      <h4 class="movie__card__year">{{ movie.year }}</h4>
+    </div>
+  </div>
+</article>

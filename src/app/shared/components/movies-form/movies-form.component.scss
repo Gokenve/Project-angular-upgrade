@@ -1,0 +1,50 @@
+.movie-form {
+
+    &__input-container {
+        display: flex;
+        width: 100%;
+        min-width: 500px;
+        height: 35px;
+        align-items: center;
+        justify-content: space-between;
+        flex-direction: column;
+        flex-wrap:wrap;
+    }
+
+    &__lablel {
+        width: 150px;
+    }
+
+    &__input {
+
+        width: 300px;
+
+        &__error {
+            color: red;
+            font-size: 13px;
+        }
+    }
+
+    &__buttons {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100px;
+        gap: 200px;
+    }
+
+    &__required {
+        font-size: 12px;
+        margin-top: 15px;
+    }
+
+}
+
+.movie-form h5 {
+    display:flex;
+    justify-content: center;
+    margin-bottom: 35px;
+}
+
+
+

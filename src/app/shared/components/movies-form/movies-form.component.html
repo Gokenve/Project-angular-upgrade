@@ -1,0 +1,134 @@
+<article class="movie-form">
+    <h5>CREAR PELÍCULA</h5>
+    <form
+    *ngIf="movieForm"
+    (submit)="createMovie()"
+    [formGroup]="movieForm"
+    #moviesForm="ngForm"
+    >
+        <div class="movie-form__input-container">
+            <label class="movie-form__label" for="title">Introduce título*</label>
+            <input
+            class="movie-form__input" 
+            type="text"
+            name="title"
+            placeholder="Título"
+            formControlName="title"
+            >
+            <p class="movie-form__input__error" *ngIf="!movieForm.get('title')?.valid && movieForm.get('title')?.touched">
+                Este campo es obligatorio
+            </p>
+        </div>
+        <div class="movie-form__input-container">
+            <label class="movie-form__label" for="director">Introduce director/a*</label>
+            <input
+            class="movie-form__input" 
+            type="text"
+            name="director"
+            placeholder="Director/a"
+            formControlName="director"
+            >
+            <p class="movie-form__input__error" *ngIf="!movieForm.get('director')?.valid && movieForm.get('director')?.touched">
+                Este campo es obligatorio
+            </p>
+        </div>
+        <div class="movie-form__input-container">
+            <label class="movie-form__label" for="cast">Actores/Actrices</label>
+            <input
+            class="movie-form__input" 
+            type="text"
+            name="cast"
+            placeholder=" Reparto principal"
+            formControlName="cast"
+            >
+            <button>Añadir</button>
+        </div>
+        <div class="movie-form__input-container">
+            <label class="movie-form__label" for="year">Año de extreno*</label>
+            <input
+            class="movie-form__input" 
+            name="year"
+            placeholder="Año de estreno"
+            formControlName="year"
+            >
+            <p class="movie-form__input__error" *ngIf="!movieForm.get('year')?.valid
+                 && movieForm.get('year')?.touched 
+                 && movieForm.get('year')?.errors?.['required']
+                 ">
+                Este campo es obligatorio
+            </p>
+            <p class="movie-form__input__error" *ngIf="!movieForm.get('year')?.valid 
+                && movieForm.get('year')?.touched
+                && movieForm.get('year')?.errors?.['maxlength']
+                ">
+                Ha excedido la longitud máxima de 4 números
+            </p>
+            <p class="movie-form__input__error" *ngIf="!movieForm.get('year')?.valid 
+                && movieForm.get('year')?.touched
+                && movieForm.get('year')?.errors?.['pattern']
+                ">
+                Sólo admite números
+            </p>
+        </div>
+        <div class="movie-form__input-container">
+            <label class="movie-form__label" for="genre">Género/s</label>
+            <select
+            class="movie-form__input movie-form__select" 
+            name="genre"
+            formControlName="genre"
+            >
+            <option *ngFor="let moviGenre of moviesGenres">{{ moviGenre }}</option>
+        </select>
+        </div>
+        <div class="movie-form__input-container">
+            <label class="movie-form__label" for="producers">Producción</label>
+            <input
+            class="movie-form__input" 
+            type="text"
+            name="producers"
+            placeholder=" Producción"
+            formControlName="producers"
+            >
+        </div>
+        <div class="movie-form__input-container">
+            <label class="movie-form__label" for="script">Guión</label>
+            <input
+            class="movie-form__input" 
+            type="text"
+            name="script"
+            placeholder=" Guión"
+            formControlName="script"
+            >
+        </div>
+        <div class="movie-form__input-container">
+            <label class="movie-form__label" for="duration">Duración</label>
+            <input
+            class="movie-form__input" 
+            type="text"
+            name="duration"
+            placeholder=" Ej. 1h 30min"
+            formControlName="duration"
+            >
+        </div>
+        <div class="movie-form__input-container">
+            <label class="movie-form__label" for="picture">Imagen</label>
+            <input 
+            class="movie-form__input"
+            type="file"
+            name="picture"
+            formControlName="picture"
+            >
+        </div>
+        <p class="movie-form__required">* Campos obligatorios</p>
+        <div  class="movie-form__buttons">
+            <app-button
+            [buttonType]="'Crear'"
+            >
+            </app-button>
+            <app-button
+            [buttonType]="'Actualizar'"
+            >
+        </app-button>
+        </div>
+    </form>
+</article>

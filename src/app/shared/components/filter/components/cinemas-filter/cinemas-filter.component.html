@@ -1,0 +1,22 @@
+<article class="filter">
+    <div class="filter__container__select">
+        <label for="selectFilter">Filtrar por</label>
+        <select 
+        class="filter__select" 
+        name="selectFiler"
+        [(ngModel)]="selectFilter">
+            <option>Nombre</option>
+            <option>Localidad</option>
+            <option>Película</option>
+    </select>
+    </div>
+    <div class="filter__container_input">
+        <label for="filter"></label>
+        <input 
+        class="filter__input"
+        type="text"
+        name="filter"
+        [placeholder]="selectFilter"
+        [(ngModel)]="inputValue">
+    </div>
+</article>

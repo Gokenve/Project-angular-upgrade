@@ -1,0 +1,13 @@
+<nav class="nav__header">
+  <ul class="ul__nav">
+    <li 
+    class="list__nav"
+    routerLinkActive="active"
+    *ngFor="let page of pagesToSelect">
+      <app-navlink
+        [page]="page"
+      >
+      </app-navlink>
+    </li>
+  </ul>
+</nav>
