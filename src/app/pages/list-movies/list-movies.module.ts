@@ -9,7 +9,7 @@ import { ListMoviesComponent } from './list-movies.component';
 import { MovieComponent } from './components/movie/movie.component';
 import { ListMoviesRoutingModule } from './list-movies-routing.module';
 import { SharedModule } from 'src/app/shared/shared.module';
-import { CoreModule } from 'src/app/core/core.module';
+import { FilteringPipe } from 'src/app/shared/pipes/filtering.pipe';
 
 
 @NgModule({
@@ -22,9 +22,11 @@ import { CoreModule } from 'src/app/core/core.module';
     ListMoviesRoutingModule,
     RouterModule,
     SharedModule,
-    CoreModule
   ],
   exports: [
+  ],
+  providers: [
+    FilteringPipe
   ]
 })
 export class ListMoviesModule { }

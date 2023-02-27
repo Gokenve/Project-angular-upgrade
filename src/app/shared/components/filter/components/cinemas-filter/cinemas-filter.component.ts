@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 export class CinemasFilterComponent {
 
-  public inputValue?: string;
+  public filter?: string;
   public selectFilter: string = 'Nombre';
 
 

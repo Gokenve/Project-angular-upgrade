@@ -1,11 +1,15 @@
 <section class="listMovies">
-    <app-filter [actualSection]="actualSection"></app-filter>
+    <app-filter
+     
+    [actualSection]="actualSection"></app-filter>
     <article class="listMovies__container">
         <app-movie 
         class="listMovies__movie"
-        *ngFor="let movie of movies"
+        *ngFor="let movie of movies | filtering: filter"
         [movie]="movie"
+        (onRemove)="onRemove(movie._id)"
     ></app-movie>
+    <p>{{ filter }}</p>
     </article>    
 </section>
 

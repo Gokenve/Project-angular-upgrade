@@ -1,15 +1,17 @@
 .forms__container {
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-direction: row;
+    align-items:center;
+    align-content: space-between;
+    justify-content: space-around;
     background-color: rgb(204, 178, 112);
     margin-top: 25px;
     border-radius: 20px;
     width: 100%;
-    min-width: 700px;
+    min-width: 800px;
     height: 100%;
     min-height: 525px;
+    max-height: 790px;
     box-shadow: 5px 5px 5px rgb(43, 42, 42);
     border: 1px solid black;
-    gap: 40px;
 }

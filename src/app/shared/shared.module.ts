@@ -6,11 +6,12 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 import { FilterComponent } from './components/filter/filter.component';
 import { SearcherComponent } from './components/searcher/searcher.component';
-import { ButtonComponent } from './components/button/button.component';
 import { MoviesFormComponent } from './components/movies-form/movies-form.component';
 import { CinemasFormComponent } from './components/cinemas-form/cinemas-form.component';
 import { MoviesFilterComponent } from './components/filter/components/movies-filter/movies-filter.component';
 import { CinemasFilterComponent } from './components/filter/components/cinemas-filter/cinemas-filter.component';
+import { ButtonComponent } from './components/button/button.component';
+import { FilteringPipe } from './pipes/filtering.pipe';
 
 
 
@@ -24,6 +25,7 @@ import { CinemasFilterComponent } from './components/filter/components/cinemas-f
     CinemasFormComponent,
     MoviesFilterComponent,
     CinemasFilterComponent,
+    FilteringPipe,
   ],
   imports: [
     CommonModule,
@@ -35,7 +37,8 @@ import { CinemasFilterComponent } from './components/filter/components/cinemas-f
     MoviesFormComponent,
     CinemasFormComponent,
     FilterComponent,
-    SearcherComponent
+    SearcherComponent,
+    FilteringPipe
   ]
 })
 export class SharedModule { }

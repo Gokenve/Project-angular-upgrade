@@ -5,6 +5,7 @@
         class="listCinemas__cinema"
         *ngFor="let cinema of cinemas"
         [cinema]="cinema"
+        (OnRemove)="onRemove(cinema._id)"
     ></app-cinema>
     </article>
 </section>

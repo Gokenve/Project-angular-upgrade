@@ -1,8 +1,7 @@
-import { UserComponent } from './pages/user/user.component';
-import { MoviesFormComponent } from './shared/components/movies-form/movies-form.component';
+import { EditFormComponent } from './pages/user/edit-form/edit-form.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-
+import { HomeComponent } from './pages/home/home.component';
 
 const routes: Routes = [
   { 
@@ -12,7 +11,7 @@ const routes: Routes = [
   },
   { 
     path: 'home',
-    loadChildren: ()=> import('./pages/home/home.module').then(m => m.HomeModule)
+    component: HomeComponent
   },
   { 
     path: 'list-movies',
@@ -28,23 +27,21 @@ const routes: Routes = [
   },
   { 
     path: 'list-cinemas/:id', 
-    loadChildren: () => import('./pages/detail-cinema/detail-cinema.module').then(m => m.DetailCinemaModule) 
-  },
+    loadChildren: () => import('./pages/detail-cinema/detail-cinema.module').then(m => m.DetailCinemaModule)  },
   {
     path: 'user',
-    component: UserComponent
-  },
+    loadChildren: () => import('./pages/user/user.module').then(m => m.UserModule)},
   {
     path: 'user/:login',
-    loadChildren: () => import('./pages/home/home.module').then(m => m.HomeModule)
+    redirectTo: 'home'
   },
   {
     path: 'user/:register',
-    loadChildren: () => import('./pages/home/home.module').then(m => m.HomeModule)
+    redirectTo: 'home'
   },
   {
-    path: 'user/:edit',
-    loadChildren: () => import('./pages/edit-form/edit-form.module').then(m => m.EditFormModule)
+    path: 'edit-movie',
+    component: EditFormComponent
   },
   {
     path: '**',

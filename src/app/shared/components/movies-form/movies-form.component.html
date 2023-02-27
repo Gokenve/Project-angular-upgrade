@@ -1,11 +1,42 @@
 <article class="movie-form">
-    <h5>CREAR PELÍCULA</h5>
+    <h5 
+    *ngIf="buttonType === 'crear'">
+    CREAR PELÍCULA
+    </h5>
+    <h5 
+    *ngIf="buttonType === 'actualizar'">
+    ACTUALIZAR PELÍCULA
+    </h5>
     <form
     *ngIf="movieForm"
     (submit)="createMovie()"
     [formGroup]="movieForm"
     #moviesForm="ngForm"
     >
+    <div  class="movie-form__buttons">
+        <app-button
+        (click)="submitChoosen('crear')"
+        [buttonType]="'Crear'"
+        >
+        </app-button>
+        <app-button
+        (click)="submitChoosen('actualizar')"
+        [buttonType]="'Actualizar'"
+        >
+        </app-button>
+    </div>
+        <div 
+        *ngIf="buttonType != 'crear'"
+        class="movie-form__input-container">
+            <label class="movie-form__label" for="_id">Introduce id*</label>
+            <input
+            class="movie-form__input" 
+            type="text"
+            name="_id"
+            placeholder="Id"
+            formControlName="_id"
+            >
+        </div>
         <div class="movie-form__input-container">
             <label class="movie-form__label" for="title">Introduce título*</label>
             <input
@@ -31,6 +62,11 @@
             <p class="movie-form__input__error" *ngIf="!movieForm.get('director')?.valid && movieForm.get('director')?.touched">
                 Este campo es obligatorio
             </p>
+            <p class="movie-form__input__error" *ngIf="!movieForm.get('director')?.valid 
+            && movieForm.get('director')?.errors?.['pattern']
+            ">
+            Este campo sólo admite letras
+        </p>
         </div>
         <div class="movie-form__input-container">
             <label class="movie-form__label" for="cast">Actores/Actrices</label>
@@ -41,33 +77,40 @@
             placeholder=" Reparto principal"
             formControlName="cast"
             >
-            <button>Añadir</button>
+            <p class="movie-form__input__error" *ngIf="!movieForm.get('cast')?.valid 
+            && movieForm.get('cast')?.errors?.['pattern']
+            ">
+            Este campo sólo admite letras
+        </p>
         </div>
         <div class="movie-form__input-container">
             <label class="movie-form__label" for="year">Año de extreno*</label>
             <input
             class="movie-form__input" 
             name="year"
-            placeholder="Año de estreno"
+            placeholder="Ej.: 2023"
             formControlName="year"
             >
             <p class="movie-form__input__error" *ngIf="!movieForm.get('year')?.valid
-                 && movieForm.get('year')?.touched 
+                 && movieForm.get('year')?.dirty 
                  && movieForm.get('year')?.errors?.['required']
                  ">
                 Este campo es obligatorio
             </p>
             <p class="movie-form__input__error" *ngIf="!movieForm.get('year')?.valid 
-                && movieForm.get('year')?.touched
                 && movieForm.get('year')?.errors?.['maxlength']
                 ">
-                Ha excedido la longitud máxima de 4 números
+                Ha excedido la longitud máxima de números
             </p>
             <p class="movie-form__input__error" *ngIf="!movieForm.get('year')?.valid 
-                && movieForm.get('year')?.touched
                 && movieForm.get('year')?.errors?.['pattern']
                 ">
-                Sólo admite números
+                Este campo sólo admite números
+            </p>
+            <p class="movie-form__input__error" *ngIf="!movieForm.get('year')?.valid 
+                && movieForm.get('year')?.errors?.['isNotValid']
+                ">
+                Ese año es mayor que el año actual
             </p>
         </div>
         <div class="movie-form__input-container">
@@ -120,15 +163,11 @@
             >
         </div>
         <p class="movie-form__required">* Campos obligatorios</p>
-        <div  class="movie-form__buttons">
-            <app-button
-            [buttonType]="'Crear'"
-            >
-            </app-button>
-            <app-button
-            [buttonType]="'Actualizar'"
-            >
-        </app-button>
+        <div class="movie-form__buttons">
+            <app-button 
+            [buttonType]="'Enviar'"
+            ></app-button> 
         </div>
     </form>
 </article>
+

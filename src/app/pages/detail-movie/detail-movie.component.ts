@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-
+// Importing movies's interface
 import { IMovie } from 'src/app/core/services/models/movie.models';
-
+// Importing list of movies
 import { movies } from 'src/app/core/services/data/moked-data/movies.data';
 
 

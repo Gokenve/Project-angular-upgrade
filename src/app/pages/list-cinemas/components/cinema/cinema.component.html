@@ -6,4 +6,8 @@
         <h4 class="cinema__card__year">{{ cinema.location }}</h4>
       </div>
     </div>
+    <app-button
+  (click)="removeCinema()" 
+  [buttonType]="'Eliminar'">
+  </app-button>
 </article>

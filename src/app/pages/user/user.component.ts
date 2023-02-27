@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Component } from '@angular/core';
 
 @Component({
@@ -6,5 +7,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./user.component.scss']
 })
 export class UserComponent {
+
+
+  constructor(private router: Router ) {}
+  
+  navigateToCreateMovie() {
+    this.router.navigate(['edit-movie']);
+  }
 
 }

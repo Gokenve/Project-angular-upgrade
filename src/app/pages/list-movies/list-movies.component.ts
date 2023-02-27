@@ -1,6 +1,7 @@
 import { Component, OnInit, OnChanges, SimpleChanges, OnDestroy } from '@angular/core';
-
+// Importing list of movies
 import { movies } from 'src/app/core/services/data/moked-data/movies.data';
+// Importing movies interface
 import { IMovie } from 'src/app/core/services/models/movie.models';
 
 @Component({
@@ -9,18 +10,25 @@ import { IMovie } from 'src/app/core/services/models/movie.models';
   styleUrls: ['./list-movies.component.scss']
 })
 export class ListMoviesComponent implements OnInit, OnChanges, OnDestroy {
-
+  // Creating movies variable
   public movies: IMovie[] = movies;
+  // Declaring actual section (page) to be used into the filter's component
   public actualSection: string= 'listMovies';
-  public filteredMovies?: IMovie[];
+  // Initializing filter's movies input
+  public filter: string = '';
+  //public filteredMovies?: IMovie[];
+  //public newMoviesList: IMovie[] = [];
 
-  public removeMovie(id: string): void {
+  constructor() { 
+    //! Para dependencias (servicios, pipes, ...)
+    //this.filterInputValue = '';
+    //this.filteredMovies = this.movies;
+  }
+  // Function to remove movies from the list
+  public onRemove(id: string): void {
+    if (!id) { return; }
     this.movies = this.movies.filter(movie => movie._id !== id)
   };
-
-  constructor() {
-    //! Para dependencias (servicios, pipes, ...)
-  }
 
   public ngOnInit(): void {
     //!Petición API? Lógica componente aquí

@@ -10,4 +10,8 @@
       <h4 class="movie__card__year">{{ movie.year }}</h4>
     </div>
   </div>
+  <app-button
+  (click)="removeMovie()" 
+  [buttonType]="'Eliminar'">
+  </app-button>
 </article>

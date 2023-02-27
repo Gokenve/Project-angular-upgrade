@@ -8,8 +8,9 @@ import { Component, Input } from '@angular/core';
 })
 export class ButtonComponent {
 
-  @Input() public buttonType!: string;
   @Input() public movieForm!: FormGroup;
+  @Input() public buttonType!: string;
+
 
   sendValue() {
       //this.value.emit(this.value)

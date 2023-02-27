@@ -1,8 +1,10 @@
 <div class="user-wrapper">
     <span>
-       <!--<app-button [buttonType]="'Mis creaciones'"></app-button>
+        <app-button [buttonType]="'Mis creaciones'"  routerLinkActive="router-link-active" ></app-button>
         <app-button [buttonType]="'Mis actualizaciones'"></app-button>
-        <app-button [buttonType]="'Editar'"></app-button>-->
-        <app-searcher></app-searcher>
+        <app-button 
+        [buttonType]="'Crear'" 
+        (click)="navigateToCreateMovie()"
+         ></app-button>
     </span>
 </div>

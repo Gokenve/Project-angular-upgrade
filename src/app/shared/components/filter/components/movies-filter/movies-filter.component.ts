@@ -9,7 +9,7 @@ import { Component } from '@angular/core';
 export class MoviesFilterComponent {
   
   
-  public inputValue?: string;
+  public filter?: string;
   public selectFilter: string = 'Título';
   public selectGenre: string = 'Todos';
   public moviesGenres: string[] = moviesGenres;

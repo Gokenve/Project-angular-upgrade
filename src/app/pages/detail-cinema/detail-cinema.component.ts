@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-
+// Importing cinema's interface
 import { ICinema } from 'src/app/core/services/models/cinema.models';
-
+// Importing list of cinemas
 import { cinemas } from 'src/app/core/services/data/moked-data/cinemas.data';
 
 
