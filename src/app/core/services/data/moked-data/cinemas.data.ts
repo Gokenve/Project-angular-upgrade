@@ -1,7 +1,7 @@
-import { ICinema } from '../../models/cinema.models';
+import { IApiCinema } from '../api-lists/models/api-cinema.models';
 
 
-export const cinemas: ICinema[] = [
+export const cinemas: IApiCinema[] = [
     {
         "_id": "63962bd6e8be3d89693d2ec2",
         "name": "Cinetesa",

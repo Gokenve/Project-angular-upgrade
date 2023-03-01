@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 // Importing movies's interface
-import { IMovie } from 'src/app/core/services/models/movie.models';
+import { IApiMovie } from 'src/app/core/services/data/api-lists/models/api-movie.models';
 // Importing list of movies
 import { movies } from 'src/app/core/services/data/moked-data/movies.data';
 
@@ -12,7 +12,7 @@ import { movies } from 'src/app/core/services/data/moked-data/movies.data';
   styleUrls: ['./detail-movie.component.scss']
 })
 export class DetailMovieComponent {
-  public movie?: IMovie;
+  public movie?: IApiMovie;
 
 constructor(private activatedroute: ActivatedRoute) {
   this.activatedroute.params.subscribe((params) => {

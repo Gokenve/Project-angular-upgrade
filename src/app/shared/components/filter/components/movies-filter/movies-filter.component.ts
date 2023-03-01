@@ -1,5 +1,5 @@
 import { moviesGenres } from './../../../../../core/services/data/moked-data/movies.data';
-import { Component } from '@angular/core';
+import { Component, Output } from '@angular/core';
 
 @Component({
   selector: 'app-movies-filter',
@@ -9,9 +9,11 @@ import { Component } from '@angular/core';
 export class MoviesFilterComponent {
   
   
-  public filter?: string;
+  public filter!: string;
   public selectFilter: string = 'Título';
   public selectGenre: string = 'Todos';
   public moviesGenres: string[] = moviesGenres;
+
+  @Output() public filteredItem: string =  this.filter;
 
 }

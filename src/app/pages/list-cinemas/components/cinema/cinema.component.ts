@@ -2,7 +2,7 @@ import { Router } from '@angular/router';
 
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 // Importing cinemas interface
-import { ICinema } from 'src/app/core/services/models/cinema.models';
+import { IApiCinema } from 'src/app/core/services/data/api-lists/models/api-cinema.models';
 
 @Component({
   selector: 'app-cinema',
@@ -11,7 +11,7 @@ import { ICinema } from 'src/app/core/services/models/cinema.models';
 })
 export class CinemaComponent {
   // Input from loop's html list-cinemas in order to be used into the html's cinema
-  @Input () public cinema?: ICinema
+  @Input () public cinema?: IApiCinema
 
   @Output() public OnRemove: EventEmitter<void> = new EventEmitter<void>();
 

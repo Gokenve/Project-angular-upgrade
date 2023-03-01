@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 // Importing cinema's interface
-import { ICinema } from 'src/app/core/services/models/cinema.models';
+import { IApiCinema } from 'src/app/core/services/data/api-lists/models/api-cinema.models';
 // Importing list of cinemas
 import { cinemas } from 'src/app/core/services/data/moked-data/cinemas.data';
 
@@ -12,7 +12,7 @@ import { cinemas } from 'src/app/core/services/data/moked-data/cinemas.data';
   styleUrls: ['./detail-cinema.component.scss']
 })
 export class DetailCinemaComponent {
-  public cinema?: ICinema;
+  public cinema?: IApiCinema;
 
 constructor (private activatedRoute: ActivatedRoute) {
   this.activatedRoute.params.subscribe((params) => {

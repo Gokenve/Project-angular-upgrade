@@ -1,10 +1,10 @@
-import { IMovie } from './movie.models';
+import { IApiMovie } from './api-movie.models';
 
-export interface ICinema {
+export interface IApiCinema {
     _id: string;
     name: string;
     location: string;
-    movies?: IMovie[];
+    movies?: IApiMovie[];
     website?: string;
     contact?: {
         email?: string;

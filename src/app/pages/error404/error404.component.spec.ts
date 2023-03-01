@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SearcherComponent } from './searcher.component';
+import { Error404Component } from './error404.component';
 
-describe('SearcherComponent', () => {
-  let component: SearcherComponent;
-  let fixture: ComponentFixture<SearcherComponent>;
+describe('Error404Component', () => {
+  let component: Error404Component;
+  let fixture: ComponentFixture<Error404Component>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SearcherComponent ]
+      declarations: [ Error404Component ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(SearcherComponent);
+    fixture = TestBed.createComponent(Error404Component);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -1,4 +1,4 @@
-export interface IMovie {
+export interface IApiMovie {
     _id: string;
     title: string;
     director: string;

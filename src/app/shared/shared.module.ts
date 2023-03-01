@@ -5,7 +5,6 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 
 import { FilterComponent } from './components/filter/filter.component';
-import { SearcherComponent } from './components/searcher/searcher.component';
 import { MoviesFormComponent } from './components/movies-form/movies-form.component';
 import { CinemasFormComponent } from './components/cinemas-form/cinemas-form.component';
 import { MoviesFilterComponent } from './components/filter/components/movies-filter/movies-filter.component';
@@ -19,7 +18,6 @@ import { FilteringPipe } from './pipes/filtering.pipe';
 @NgModule({
   declarations: [
     FilterComponent,
-    SearcherComponent,
     ButtonComponent,
     MoviesFormComponent,
     CinemasFormComponent,
@@ -37,7 +35,6 @@ import { FilteringPipe } from './pipes/filtering.pipe';
     MoviesFormComponent,
     CinemasFormComponent,
     FilterComponent,
-    SearcherComponent,
     FilteringPipe
   ]
 })

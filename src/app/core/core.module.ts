@@ -10,14 +10,13 @@ import { NavHeaderComponent } from './components/header/nav-header/nav-header.co
 import { FooterComponent } from './components/footer/footer.component';
 import { NavlinkComponent } from './components/header/nav-header/navlink/navlink.component';
 
-
-
 @NgModule({
   declarations: [
     HeaderComponent,
     NavHeaderComponent,
     FooterComponent,
-    NavlinkComponent
+    NavlinkComponent,
+    
   ],
   imports: [
     CommonModule,

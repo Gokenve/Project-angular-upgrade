@@ -2,7 +2,7 @@ import { Router } from '@angular/router';
 
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 //? Importing movies interface
-import { IMovie } from 'src/app/core/services/models/movie.models';
+import { IApiMovie } from 'src/app/core/services/data/api-lists/models/api-movie.models';
 
 
 @Component({
@@ -12,7 +12,7 @@ import { IMovie } from 'src/app/core/services/models/movie.models';
 })
 export class MovieComponent {
   //? Input from loop's html list-movies in order to be used into the html's movie
-  @Input() public movie?: IMovie;
+  @Input() public movie?: IApiMovie;
 
   @Output() public onRemove: EventEmitter<void> = new EventEmitter<void>();
 

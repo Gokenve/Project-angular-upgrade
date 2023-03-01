@@ -1,5 +1,7 @@
 .button {
     cursor: pointer;
+    width: 100%;
+    min-width: 50px;
     height: 20px;
     margin: 20px;
     background-color: blanchedalmond;
@@ -10,6 +12,6 @@
         opacity: 0.7;
     }
     &:active {
-        background-color: rgb(240, 171, 69);
+        background-color: rgb(255, 153, 0);
     }
 }

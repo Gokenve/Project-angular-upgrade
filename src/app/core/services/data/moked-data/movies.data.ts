@@ -1,6 +1,6 @@
-import { IMovie } from '../../models/movie.models';
+import { IApiMovie } from '../api-lists/models/api-movie.models';
 
-export const movies: IMovie[] = [
+export const movies: IApiMovie[] = [
     {
         "data_sheet": {
             "producers": [],
